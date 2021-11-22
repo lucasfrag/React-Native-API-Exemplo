@@ -11,7 +11,7 @@ Para esse exemplo, foi usada a API RESTful PokéAPI. Porém, o projeto pode ser 
 5. Enjoy!
 
 ## Capturas de tela
-<!--<img width="300" src="https://github.com/lucasfrag/React-Native-API-Exemplo/blob/master/src/Screenshots/01.png" >-->
+<img width="300" src="https://github.com/lucasfrag/React-Native-API-Exemplo/blob/master/src/images/screenshot.PNG" >
 
 ## Desenvolvido com...
 
