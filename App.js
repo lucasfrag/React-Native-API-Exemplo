@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, View, Text, FlatList, Image, StyleSheet } from 'react-native'
+import { View, Text, FlatList, Image } from 'react-native'
 
 export default class App extends Component {
 
@@ -11,7 +11,7 @@ export default class App extends Component {
     }
   }
 
-
+  // Faz a requisição na API e guarda os dados retornados no state dados
   recuperarDados() {
     this.setState({carregando: true})
     fetch ("https://pokeapi.co/api/v2/pokemon?limit=80", 
@@ -30,20 +30,16 @@ export default class App extends Component {
 
  
   render() {
-
     return(
       <View>
         <Text style={{ fontWeight: 'bold', fontSize: 24, margin: 10 }}>Pokedex</Text>
-      
-      <View>
 
         <FlatList 
           data={this.state.dados}
           renderItem={ Pokemons }
           key={item => item.name }
           numColumns={2}
-        />
-      </View>
+        />      
       </View>
     )
   }
@@ -51,11 +47,12 @@ export default class App extends Component {
 
 function Pokemons(pokemon) {
 
-  const { name, url, types } = pokemon.item
+  // Extrai dados de apenas 1 Pokemon da lista
+  const { name, url } = pokemon.item
   const numeroDoPokemon = url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '')
   const imagem = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+numeroDoPokemon+'.png'
-  console.log(name)
 
+  // Gerar cor aleatória de fundo
   const generateColor = () => {
     const randomColor = Math.floor(Math.random() * 16777215)
       .toString(16)
@@ -97,13 +94,3 @@ function Pokemons(pokemon) {
     </View>
   )
 }
-
-const style = StyleSheet.create({
-  name: {
-    fontSize: 14,
-    textTransform: "capitalize",
-    color: 'white',
-    fontWeight: 'bold'
-  }
-
-})
