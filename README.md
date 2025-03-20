@@ -1,4 +1,4 @@
-# 🚀 React Native API Exemplo
+# 🚀 React Native API - Aula
 Aplicação construída para exemplificar o consumo de APIs em uma aplicação React Native. 
 
 Para esse exemplo, foi usada a API RESTful PokéAPI. Porém, o projeto pode ser adaptado para consumir outras APIs.
